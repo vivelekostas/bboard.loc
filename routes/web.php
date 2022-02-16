@@ -20,5 +20,7 @@ Route::get('/', [BbsController::class, 'index'])->name('index');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home/add', [App\Http\Controllers\HomeController::class, 'showAddBbForm'])->name('bb.add');
+Route::post('/home', [App\Http\Controllers\HomeController::class, 'storeBb'])->name('bb.store');
 
 Route::get('/{bb}', [BbsController::class, 'detail'])->name('detail');
