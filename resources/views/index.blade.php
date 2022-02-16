@@ -1,7 +1,8 @@
 @extends('layouts.base')
 
-@section('main')
+@section('title', 'Главная')
 
+@section('main')
 @if(count($bbs) > 0)
 <table class="table table-striped">
     <thead>

@@ -10,7 +10,7 @@ class BbsController extends Controller
     public function index()
     {
         $context = ['bbs' => Bb::latest()->get()];
-        // dd($context);
+
         return view('index', $context);
     }
 
