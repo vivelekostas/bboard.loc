@@ -10,4 +10,9 @@ class Bb extends Model
     use HasFactory;
 
     protected $fillable = ['title', 'content', 'price'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
