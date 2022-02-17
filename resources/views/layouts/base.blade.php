@@ -14,6 +14,11 @@
 
     <nav class="navbar navbar-light bg-light">
         <a href="{{ route('index') }}" class="navbar-brand mr-auto">Главная</a>
+
+        @auth
+        <a href="#" class="nav-link disabled">{{ Auth::user()->name }}</a>
+        @endauth
+
         <a href="{{ route('register') }}" class="nav-item nav-link">Регистрация</a>
         <a href="{{ route('login') }}" class="nav-item nav-link">Вход</a>
         <a href="{{ route('home') }}" class="nav-item nav-link">Мои Объявления</a>

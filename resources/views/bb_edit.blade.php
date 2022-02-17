@@ -9,17 +9,32 @@
     @method('PATCH')
     <div class="form-group">
         <label for="txtTitle">Товар</label>
-        <input name="title" class="form-control" id="txtTitle" value="{{ $bb->title }}">
+        <input name="title" class="form-control @error('title') is-invalid @enderror" id="txtTitle" value="{{ old('title', $bb->title) }}">
+        @error('title')
+        <span class="invalid-feedback">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
     </div>
     <div class="form-group">
         <label for="txtContent">Описание</label>
-        <textarea name="content" id="txtContent" class="form-control" row="3">{{ $bb->content }}</textarea>
+        <textarea name="content" id="txtContent" class="form-control @error('content') is-invalid @enderror" row="3">{{ old('content', $bb->content) }}</textarea>
+        @error('content')
+        <span class="invalid-feedback">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
     </div>
     <div class="form-group">
         <label for="txtPrice">Цена</label>
-        <input name="price" class="form-control" id="txtPrice" value="{{ $bb->price }}">
+        <input name="price" class="form-control @error('price') is-invalid @enderror" id="txtPrice" value="{{ old('price', $bb->price) }}">
+        @error('price')
+        <span class="invalid-feedback">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
     </div>
     <input type="submit" class="btn btn-primary" value="Сохранить">
 </form>
 
-@endsectiona
+@endsection
